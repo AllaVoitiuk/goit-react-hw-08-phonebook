@@ -1,5 +1,4 @@
 import { styled } from '@mui/system';
-
 const blue = {
   100: '#DAECFF',
   200: '#b6daff',
@@ -33,11 +32,9 @@ export const Form = styled('form')(
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
   background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
   border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-  box-shadow: 0px 4px 30px ${
-    theme.palette.mode === 'dark' ? grey[900] : grey[200]
-  };
+  box-shadow: 0px 4px 30px ${theme.palette.mode === 'dark' ? grey[900] : grey[200]};
  
-`
+`,
 );
 export const Label = styled('label')(
   ({ theme }) => `
@@ -49,26 +46,24 @@ export const Label = styled('label')(
   padding: 5px;
   margin-right: 20px;
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]}; 
-`
+`,
 );
 
 export const Input = styled('input')(
   ({ theme }) => `
-  width: 220px;
+  width: 280px;
   font-family: IBM Plex Sans, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
   padding: 12px;
   margin-bottom: 20px;
-  margin-left: 30px;
+ 
   border-radius: 12px;
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
   background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
   border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-  box-shadow: 0px 4px 30px ${
-    theme.palette.mode === 'dark' ? grey[900] : grey[200]
-  };
+  box-shadow: 0px 4px 30px ${theme.palette.mode === 'dark' ? grey[900] : grey[200]};
 
   &:hover {
     border-color: ${blue[400]};
@@ -76,14 +71,12 @@ export const Input = styled('input')(
 
   &:focus {
     border-color: ${blue[400]};
-    box-shadow: 0 0 0 3px ${
-      theme.palette.mode === 'dark' ? blue[500] : blue[200]
-    };
+    box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? blue[500] : blue[200]};
   }
 
   // firefox
   &:focus-visible {
     outline: 0;
   }
-`
+`,
 );

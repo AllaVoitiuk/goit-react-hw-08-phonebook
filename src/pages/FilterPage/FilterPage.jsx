@@ -3,7 +3,12 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/contacts.selector';
 import { fetchContacts } from 'redux/contacts/contacts.operations';
-import { Label, Input, Li, Button } from './FilterPage.styled';
+import { Label, Input, Li } from './FilterPage.styled';
+
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const FilterPage = () => {
   const dispatch = useDispatch();
@@ -35,16 +40,17 @@ const FilterPage = () => {
         Find contacts by name
         <Input type="text" value={filterValue} onChange={changeFilter} />
       </Label>
-
       {filteredContacts.length !== 0 && (
         <ul>
           {filteredContacts.map(({ id, name, phone }) => {
             return (
               <Li key={id}>
                 {name}: {phone}
-                <Button type="button" onClick={() => handleDelete(id)}>
+                <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}>
+                <Button type="button" variant="outlined"  size="small" startIcon={<DeleteIcon />} onClick={() => handleDelete(id)}>
                   Delete
                 </Button>
+                </Stack>
               </Li>
             );
           })}

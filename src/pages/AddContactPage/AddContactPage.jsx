@@ -2,8 +2,14 @@ import { nanoid } from '@reduxjs/toolkit';
 import { useReducer } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/contacts.operations';
-import { Form, Label, Input, Button } from './AddContactPage.styled';
+import { Input, Form, Label} from './AddContactPage.styled';
 import { selectContacts } from 'redux/contacts/contacts.selector';
+
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+  
 
 const initState = {
   name: '',
@@ -78,7 +84,9 @@ const AddContactPage = () => {
           onChange={handleChange}
         />
       </Label>
-      <Button type="submit">Add contact</Button>
+      <Stack direction="row" justifyContent="center" spacing={2}>
+      <Button type="submit" variant="contained" endIcon={<PersonAddAltOutlinedIcon />}>Add contact</Button>
+      </Stack>
     </Form>
   );
 };

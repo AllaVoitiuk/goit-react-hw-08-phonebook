@@ -10,9 +10,11 @@ export const Navigation = () => {
   return (
     <nav>
       <Ul>
+      {isToken && (
         <Li>
           <StyledLink to="/"> AddContact</StyledLink>
         </Li>
+         )}
         {isToken && (
           <Li>
             <StyledLink to="filter">Filter</StyledLink>

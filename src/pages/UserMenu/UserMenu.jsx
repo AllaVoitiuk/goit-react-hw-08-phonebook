@@ -15,7 +15,7 @@ import Fingerprint from '@mui/icons-material/Fingerprint';
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  console.log(user);
+  // console.log(user);
   return (
     <Stack
       direction="row"

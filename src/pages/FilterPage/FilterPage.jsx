@@ -42,10 +42,10 @@ const FilterPage = () => {
       </Label>
       {filteredContacts.length !== 0 && (
         <ul>
-          {filteredContacts.map(({ id, name, phone }) => {
+          {filteredContacts.map(({ id, name, number }) => {
             return (
               <Li key={id}>
-                {name}: {phone}
+                {name}: {number}
                 <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}>
                 <Button type="button" variant="outlined"  size="small" startIcon={<DeleteIcon />} onClick={() => handleDelete(id)}>
                   Delete
